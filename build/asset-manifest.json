@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2ec17b36.css",
+    "main.js": "/static/js/main.2c37e96a.js",
+    "static/js/239.bf84103d.chunk.js": "/static/js/239.bf84103d.chunk.js",
+    "static/js/977.b89b9c8b.chunk.js": "/static/js/977.b89b9c8b.chunk.js",
+    "static/js/455.bca0852b.chunk.js": "/static/js/455.bca0852b.chunk.js",
+    "static/js/453.236acea9.chunk.js": "/static/js/453.236acea9.chunk.js",
+    "static/media/solvo-logo.png": "/static/media/solvo-logo.4944d8b8172ded6b0c6d.png",
+    "static/media/sustainability.svg": "/static/media/sustainability.e7bbfa08cde1491ced7d3083314f37c2.svg",
+    "static/media/excellence.svg": "/static/media/excellence.c97e60453c33877c58f7a7b454443d91.svg",
+    "static/media/community.svg": "/static/media/community.394c61f5a86c47aba5afdfa389bb30ea.svg",
+    "index.html": "/index.html",
+    "main.2ec17b36.css.map": "/static/css/main.2ec17b36.css.map",
+    "main.2c37e96a.js.map": "/static/js/main.2c37e96a.js.map",
+    "239.bf84103d.chunk.js.map": "/static/js/239.bf84103d.chunk.js.map",
+    "977.b89b9c8b.chunk.js.map": "/static/js/977.b89b9c8b.chunk.js.map",
+    "455.bca0852b.chunk.js.map": "/static/js/455.bca0852b.chunk.js.map",
+    "453.236acea9.chunk.js.map": "/static/js/453.236acea9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ec17b36.css",
+    "static/js/main.2c37e96a.js"
+  ]
+}
