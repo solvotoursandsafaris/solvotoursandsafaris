@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .details { margin: 20px 0; }
+        .footer { text-align: center; margin-top: 30px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Booking Confirmation</h1>
+            <p>Thank you for booking with Solvo Tours and Safaris!</p>
+        </div>
+
+        <div class="details">
+            <h2>Booking Details</h2>
+            <p>Booking Reference: #{{ booking.id }}</p>
+            <p>Safari: {{ booking.safari.title }}</p>
+            <p>Date: {{ booking.date }}</p>
+            <p>Guests: {{ booking.guests }}</p>
+            <p>Total Price: ${{ booking.total_price }}</p>
+        </div>
+
+        <div class="details">
+            <h2>Safari Information</h2>
+            <p>Duration: {{ booking.safari.duration }} days</p>
+            <p>Location: {{ booking.safari.destination.name }}</p>
+            <p>Included: {{ booking.safari.included|linebreaks }}</p>
+        </div>
+
+        <div class="footer">
+            <p>If you have any questions, please don't hesitate to contact us.</p>
+            <p>We look forward to hosting you on your safari adventure!</p>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,26 @@
+Thank you for booking with Solvo Tours and Safaris!
+
+BOOKING CONFIRMATION
+
+Booking Details:
+---------------
+Booking Reference: #{{ booking.id }}
+Safari: {{ booking.safari.title }}
+Date: {{ booking.date }}
+Guests: {{ booking.guests }}
+Total Price: ${{ booking.total_price }}
+
+Safari Information:
+-----------------
+Duration: {{ booking.safari.duration }} days
+Location: {{ booking.safari.destination.name }}
+
+What's Included:
+--------------
+{{ booking.safari.included }}
+
+If you have any questions, please don't hesitate to contact us.
+We look forward to hosting you on your safari adventure!
+
+Best regards,
+Solvo Tours and Safaris Team 
