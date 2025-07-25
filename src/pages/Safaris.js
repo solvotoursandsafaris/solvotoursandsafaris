@@ -133,7 +133,7 @@ function Safaris() {
         renderFilter()
       )}
 
-      <Grid container spacing={4}>
+      <Grid container spacing={{ xs: 2, md: 4 }}>
         {filteredSafaris.map((safari) => (
           <Grid item xs={12} md={6} key={safari.id}>
             <Card
@@ -145,35 +145,37 @@ function Safaris() {
                 '&:hover': {
                   transform: 'translateY(-8px)',
                 },
+                mb: { xs: 2, md: 0 },
               }}
             >
               <ImageDisplay
                 src={safari.image}
                 alt={safari.title}
-                height={300}
+                height={window.innerWidth < 600 ? 140 : 300}
               />
-              <CardContent sx={{ flexGrow: 1 }}>
-                <Typography gutterBottom variant="h5" component="h2">
+              <CardContent sx={{ flexGrow: 1, p: { xs: 1.5, md: 3 } }}>
+                <Typography gutterBottom variant="h5" component="h2" sx={{ fontSize: { xs: '1.1rem', md: '1.3rem' } }}>
                   {safari.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary" paragraph>
+                <Typography variant="body2" color="text.secondary" paragraph sx={{ fontSize: { xs: '0.97rem', md: '1rem' } }}>
                   {safari.description.substring(0, 200)}...
                 </Typography>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <Typography variant="h6" color="primary">
+                  <Typography variant="h6" color="primary" sx={{ fontSize: { xs: '1rem', md: '1.2rem' } }}>
                     ${safari.price.toLocaleString()}
                   </Typography>
-                  <Typography variant="subtitle1">
+                  <Typography variant="subtitle1" sx={{ fontSize: { xs: '0.97rem', md: '1rem' } }}>
                     Duration: {safari.duration} days
                   </Typography>
                 </Box>
               </CardContent>
-              <CardActions>
+              <CardActions sx={{ p: { xs: 1, md: 2 } }}>
                 <Button
                   component={Link}
                   to={`/safaris/${safari.id}`}
                   variant="contained"
                   fullWidth
+                  sx={{ fontSize: { xs: '1rem', md: '1.1rem' }, minHeight: 44 }}
                 >
                   View Details
                 </Button>

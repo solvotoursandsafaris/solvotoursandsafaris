@@ -93,15 +93,19 @@ function Navbar() {
           <Toolbar disableGutters>
             {/* Logo and Company Name */}
             <Box component={Link} to="/" sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none', mr: 4 }}>
-              <img src={logo} alt="Firebird Safaris Logo" style={{ height: 40, marginRight: 12 }} />
+              <img src={logo} alt="Firebird Safaris Logo" style={{ height: 36, marginRight: 10, maxWidth: '90vw' }} />
               <Typography
                 variant="h6"
                 sx={{
                   color: isTransparent ? 'white' : 'white',
                   fontWeight: 700,
                   letterSpacing: 1,
-                  fontSize: '1.5rem',
+                  fontSize: { xs: '1.1rem', sm: '1.5rem' },
                   textShadow: isTransparent ? '0 1px 8px rgba(0,0,0,0.25)' : 'none',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  maxWidth: { xs: '60vw', sm: 'none' },
                 }}
               >
                 SOLVO TOURS AND SAFARIS
@@ -187,8 +191,11 @@ function Navbar() {
           anchor="right"
           open={mobileOpen}
           onClose={() => setMobileOpen(false)}
+          PaperProps={{
+            sx: { width: '100%', maxWidth: 320, pt: 2 }
+          }}
         >
-          <Box sx={{ width: 250, pt: 2 }}>
+          <Box sx={{ width: '100%' }}>
             <List>
               {navItems.map((item) => (
                 <ListItem 
@@ -196,15 +203,16 @@ function Navbar() {
                   component={Link}
                   to={item.path}
                   onClick={() => setMobileOpen(false)}
-                  sx={{ color: 'text.primary', textDecoration: 'none' }}
+                  sx={{ color: 'text.primary', textDecoration: 'none', py: 2, px: 3, fontSize: { xs: '1.1rem', sm: '1.2rem' } }}
+                  button
                 >
                   <ListItemText primary={item.title} />
                 </ListItem>
               ))}
-              <ListItem component={Link} to="/login">
+              <ListItem component={Link} to="/login" sx={{ py: 2, px: 3, fontSize: { xs: '1.1rem', sm: '1.2rem' } }} button>
                 <ListItemText primary="Login" />
               </ListItem>
-              <ListItem component={Link} to="/signup">
+              <ListItem component={Link} to="/signup" sx={{ py: 2, px: 3, fontSize: { xs: '1.1rem', sm: '1.2rem' } }} button>
                 <ListItemText primary="Sign Up" />
               </ListItem>
             </List>

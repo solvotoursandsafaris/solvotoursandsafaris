@@ -410,6 +410,18 @@ const Chatbot = () => {
           background-size: cover;
           background-repeat: repeat;
         }
+        @media (max-width: 600px) {
+          .MuiIconButton-root[aria-label="Open chatbot"],
+          .MuiIconButton-root[aria-label="Open WhatsApp chat"] {
+            width: 44px !important;
+            height: 44px !important;
+          }
+          .MuiBox-root[style*='position: fixed'][style*='bottom: 32px'] {
+            bottom: 12px !important;
+            right: 12px !important;
+            gap: 8px !important;
+          }
+        }
       `}</style>
 
       {/* Chatbot Interface */}

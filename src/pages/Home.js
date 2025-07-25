@@ -285,15 +285,16 @@ function Home() {
         <Box
           sx={{
           width: '100%',
-          minHeight: { xs: 320, md: 400 },
+          minHeight: { xs: 220, md: 400 },
               display: 'flex',
               flexDirection: 'column',
           alignItems: 'center',
               justifyContent: 'center',
               position: 'relative',
           overflow: 'hidden',
-          mb: 8,
+          mb: { xs: 4, md: 8 },
           background: 'linear-gradient(120deg, #f9d423 0%, #ff4e50 100%)',
+          px: { xs: 1, md: 0 },
         }}
       >
         {/* Animated sunrise or wildlife silhouettes (SVG) */}
@@ -332,7 +333,7 @@ function Home() {
       </Box>
 
       {/* Animated Counters with Icons */}
-      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 6, my: 6, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', gap: { xs: 2, md: 6 }, my: { xs: 2, md: 6 }, flexWrap: 'wrap', alignItems: 'center' }}>
         <Box sx={{ textAlign: 'center', mx: 2 }}>
           <GroupIcon color="primary" sx={{ fontSize: 40, mb: 1 }} />
           <AnimatedCounter end={2500} label="Happy Travelers" />
@@ -348,7 +349,7 @@ function Home() {
       </Box>
 
       {/* Featured Safaris Section */}
-      <Box ref={featuredSafarisRef} sx={{ py: 8, bgcolor: '#f7fafc' }}>
+      <Box ref={featuredSafarisRef} sx={{ py: { xs: 3, md: 8 }, bgcolor: '#f7fafc' }}>
         <Container id="featured-safaris">
           <Typography variant="h3" align="center" sx={{ fontWeight: 700, mb: 4 }}>
           Featured Safaris
@@ -362,7 +363,7 @@ function Home() {
           Explore our most popular safari experiences
         </Typography>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={{ xs: 2, md: 4 }}>
           {featuredSafaris.map((safari) => (
             <Grid item key={safari.id} xs={12} sm={6} md={4}>
               <Card
@@ -375,13 +376,15 @@ function Home() {
                     transform: 'translateY(-5px)',
                     boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
                   },
+                  mb: { xs: 2, md: 0 },
                 }}
               >
                 <CardMedia
                   component="img"
-                  height="240"
+                  height={window.innerWidth < 600 ? 160 : 240}
                   image={safari.image}
                   alt={safari.title}
+                  sx={{ objectFit: 'cover' }}
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Typography gutterBottom variant="h5" component="h2">
@@ -447,7 +450,7 @@ function Home() {
       </Box>
 
       {/* Featured Accommodations Section */}
-      <Container sx={{ py: 8 }}>
+      <Container sx={{ py: { xs: 3, md: 8 } }}>
         <Typography variant="h3" align="center" gutterBottom>
           Our Favourite Places to Stay
         </Typography>
@@ -460,15 +463,16 @@ function Home() {
           Discover our top-rated lodges, camps, and hotels.
         </Typography>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={{ xs: 2, md: 4 }}>
           {featuredAccommodations.slice(0, 6).map((accommodation) => (
             <Grid item key={accommodation.id} xs={12} sm={6} md={4}>
-              <StyledCard>
+              <StyledCard sx={{ mb: { xs: 2, md: 0 } }}>
                 <CardMedia
                   component="img"
-                  height="240"
+                  height={window.innerWidth < 600 ? 120 : 240}
                   image={accommodation.image}
                   alt={accommodation.name}
+                  sx={{ objectFit: 'cover' }}
                 />
                 <CardContent>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
@@ -529,7 +533,7 @@ function Home() {
       </Container>
 
       {/* Why Choose Us Section */}
-      <Box sx={{ py: 0, bgcolor: 'secondary.light', mt: 8, position: 'relative' }}>
+      <Box sx={{ py: { xs: 2, md: 8 }, bgcolor: 'secondary.light', mt: { xs: 4, md: 8 }, position: 'relative' }}>
         {/* Wave Divider */}
         <Box sx={{ position: 'absolute', top: -40, left: 0, width: '100%', zIndex: 1 }}>
           <Wave fill="#f7fafc" paused={false} options={{ height: 20, amplitude: 20, speed: 0.2, points: 3 }} style={{ minHeight: 40 }} />
@@ -580,7 +584,7 @@ function Home() {
       </Box>
 
       {/* FAQ Accordion Section */}
-      <Box sx={{ py: 8, bgcolor: '#f7fafc' }}>
+      <Box sx={{ py: { xs: 3, md: 8 }, bgcolor: '#f7fafc' }}>
         <Container maxWidth="md">
           <Typography variant="h4" align="center" sx={{ fontWeight: 700, mb: 4 }}>
             Frequently Asked Questions
@@ -599,7 +603,7 @@ function Home() {
       </Box>
 
       {/* Trust Badges Row */}
-      <Box sx={{ py: 3, bgcolor: 'white', borderTop: '1px solid #eee', borderBottom: '1px solid #eee' }}>
+      <Box sx={{ py: { xs: 3, md: 8 }, bgcolor: 'white', borderTop: '1px solid #eee', borderBottom: '1px solid #eee' }}>
         <Container sx={{ display: 'flex', justifyContent: 'center', gap: 6, flexWrap: 'wrap' }}>
           <Box display="flex" alignItems="center" gap={1}>
             <SecurityIconMUI color="primary" />
@@ -621,14 +625,14 @@ function Home() {
               </Box>
 
       {/* Testimonials Carousel with Creative Heading and Subtle Background */}
-      <Box sx={{ py: 8, bgcolor: '#f9f9f9', mt: 8 }}>
+      <Box sx={{ py: { xs: 3, md: 8 }, bgcolor: '#f9f9f9', mt: { xs: 4, md: 8 } }}>
         <Container>
           <TestimonialsCarousel />
         </Container>
       </Box>
 
       {/* Newsletter Signup Section */}
-      <Box sx={{ py: 6, bgcolor: 'primary.light', mt: 8 }}>
+      <Box sx={{ py: { xs: 2, md: 6 }, bgcolor: 'primary.light', mt: { xs: 4, md: 8 } }}>
         <Container maxWidth="sm">
           <Typography variant="h4" align="center" sx={{ fontWeight: 700, mb: 2 }}>
             Stay in the Loop
@@ -655,7 +659,7 @@ function Home() {
       </Box>
 
       {/* Payment Methods Section */}
-      <Box sx={{ py: 8, textAlign: 'center' }}>
+      <Box sx={{ py: { xs: 3, md: 8 }, textAlign: 'center' }}>
         <Container maxWidth="md">
           <Typography variant="h3" gutterBottom sx={{ color: '#6f4e37', fontWeight: 500 }}>
             We Accept Online Payments
@@ -671,7 +675,7 @@ function Home() {
       </Box>
 
       {/* Call to Action Section */}
-      <Box sx={{ bgcolor: 'primary.main', py: 8, textAlign: 'center', color: 'white' }}>
+      <Box sx={{ bgcolor: 'primary.main', py: { xs: 3, md: 8 }, textAlign: 'center', color: 'white' }}>
         <Container maxWidth="md">
           <Typography variant="h3" gutterBottom>
             Ready for Your Safari Adventure?
