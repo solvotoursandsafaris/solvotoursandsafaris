@@ -74,7 +74,6 @@ function Footer({ darkMode, toggleDarkMode }) {
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
               <Phone sx={{ mr: 1 }} fontSize="small" />
               <Typography variant="body2">
-                <a href="tel:+254741106404" style={{color: 'inherit', textDecoration: 'none'}} aria-label="Call +254 741 106 404">+254 741 106 404</a><br/>
                 <a href="tel:+254790153077" style={{color: 'inherit', textDecoration: 'none'}} aria-label="Call +254 790 153 077">+254 790 153 077</a>
               </Typography>
             </Box>
